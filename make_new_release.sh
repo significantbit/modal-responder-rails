@@ -3,7 +3,7 @@
 DOCKER_IMAGE_NAME="$USER/modal-responder-rails"
 LIBRARY_NEW_VERSION=`cat lib/**/*.rb | grep VERSION | awk '{ print $3 }' | tr -d "'"`
 
-LIBRARY_UPDATED=`git status --porcelain | grep -v "lib/modal-responder-rails/version.rb"`
+LIBRARY_UPDATED=`git status --porcelain | grep -v "CHANGELOG.md" | grep -v "lib/modal-responder-rails/version.rb"`
 if [[ -n "$LIBRARY_UPDATED" ]]; then
   echo "Your repository is not clean !"
   exit 1
