@@ -2,4 +2,5 @@
 
 ## Unreleased
 
- - Inital import
+ - Initial import
+ - Importing release building tools
