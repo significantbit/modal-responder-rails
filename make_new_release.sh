@@ -16,18 +16,6 @@ if [[ -z "$EXISTING_DOCKER_IMAGE" ]]; then
   docker build -t "$DOCKER_IMAGE_NAME" .
 fi
 
-echo "Updating library code to version $LIBRARY_NEW_VERSION ..."
-docker run --rm -v `pwd`:/gem/ "$DOCKER_IMAGE_NAME" rake update
-
-LIBRARY_UPDATED=`git status --porcelain | grep -v make_new_release.sh`
-if [[ -z "$LIBRARY_UPDATED" ]]; then
-  echo "No update found, stopping release creation."
-  exit 1
-elif [[ "$LIBRARY_UPDATED" == " M lib/modal-responder-rails/version.rb" ]]; then
-  echo "None of the JS or CSS files have been updated."
-  exit 1
-fi
-
 echo "Committing new version ..."
 git commit -am "Import version $LIBRARY_NEW_VERSION"
 
