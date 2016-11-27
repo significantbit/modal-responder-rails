@@ -1,0 +1,10 @@
+#mainModal {
+  .modal-content {
+    .modal-header {
+      position: absolute;
+      right: 0;
+      border-bottom: none;
+      z-index: 1;
+    }
+  }
+}

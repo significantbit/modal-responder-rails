@@ -86,6 +86,22 @@ body and footer:
 </div>
 ```
 
+### No header
+
+In the case you want a modal without a header, meaning instead of having this:
+
+![Bootstrap 4 modal with header](https://cloud.githubusercontent.com/assets/478564/20648092/d27f9df8-b49d-11e6-9e89-60bcee6cb263.png)
+
+you want this:
+
+![Bootstrap 4 modal without header](https://cloud.githubusercontent.com/assets/478564/20648099/f2019208-b49d-11e6-8ff4-e35024ff7ffd.png)
+
+you just have to add the following to your `app/assets/stylesheets/application.scss`:
+
+```
+*= require modal-responder-no-header
+```
+
 ## Contributing
 
 1. Fork it

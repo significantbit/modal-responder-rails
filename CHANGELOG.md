@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-
+ - Adds a stylesheet file in order to hide the modal header
 
 ## 1.0.2 (2016-11-27)
 
