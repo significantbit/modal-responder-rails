@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOCKER_IMAGE_NAME="$USER/modal-responder-rails"
-LIBRARY_NEW_VERSION=`cat lib/**/*.rb | grep VERSION | awk '{ print $3 }' | tr -d "'"`
+LIBRARY_NEW_VERSION=`cat lib/**/*.rb | grep VERSION | sed -n "s/VERSION = '\(.*\)'.*/\1/p" | awk '{print $1}'`
 
 LIBRARY_UPDATED=`git status --porcelain | grep -v "CHANGELOG.md" | grep -v "lib/modal-responder-rails/version.rb"`
 if [[ -n "$LIBRARY_UPDATED" ]]; then
