@@ -27,6 +27,7 @@ RUN apt-get update && \
   gem install bundler && \
   bundle install && \
   apt-get remove --purge -y build-essential && \
+  apt-get autoremove -y && \
   apt-get autoclean -y && \
   apt-get clean
 
