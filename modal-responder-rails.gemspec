@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'responders', '~> 2.3.0'
+  spec.add_dependency 'responders', '~> 2.4.0'
   spec.add_dependency 'railties', '>= 3.2', '< 6.0'
 
   spec.add_development_dependency 'bundler', '~> 1.13'
